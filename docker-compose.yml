@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  go-api:
+    build: ./go-api
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=your_jwt_secret
+
+  node-api:
+    build: ./express-api
+    ports:
+      - "4000:4000"
+    environment:
+      - JWT_SECRET=your_jwt_secret
